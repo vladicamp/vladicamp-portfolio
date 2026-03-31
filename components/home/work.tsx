@@ -2,7 +2,6 @@ import { getProjects, getProjectTechTags } from '@/lib/wordpress';
 
 export default async function Work() {
     let projects = await getProjects().catch(() => []);
-    console.log('projects', projects);
 
     return (
         <section id="work">
