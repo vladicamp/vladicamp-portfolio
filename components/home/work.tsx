@@ -1,8 +1,9 @@
-import { getProjects, getProjectTechTags } from '@/lib/wordpress';
+import { getProjects, getProjectTechTags, getProjectThumbnail } from '@/lib/wordpress';
+import Image from 'next/image';
 
 export default async function Work() {
     let projects = await getProjects().catch(() => []);
-
+    console.log("Projects found:", projects);
     return (
         <section id="work">
             <div className="section-header">
@@ -22,8 +23,9 @@ export default async function Work() {
                     projects.map((project) => {
                         const tags = getProjectTechTags(project);
                         const tagLabel = tags.map((t) => t.name).join(' · ');
-                        const liveUrl = project.acf?.live_url || 'https://vladicamp.com/portfolio/';
-                        const thumbUrl = project.acf?.featured_image_url;
+                        const acf = !Array.isArray(project.acf) ? project.acf : {};
+                        const liveUrl = acf?.live_url || 'https://vladicamp.com/portfolio/';
+                        const thumbUrl = getProjectThumbnail(project);
 
                         return (
                             <a
@@ -36,10 +38,13 @@ export default async function Work() {
                                 <div className="work-thumb">
                                     <div className="work-thumb-inner">
                                         {thumbUrl ? (
-                                            <img
+                                            <Image
                                                 src={thumbUrl}
                                                 alt={project.title.rendered}
                                                 className="work-thumb-img"
+                                                width={500}
+                                                height={500}
+                                                loading="eager"
                                             />
                                         ) : (
                                             <div className="work-thumb-placeholder">

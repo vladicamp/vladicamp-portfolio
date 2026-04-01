@@ -21,9 +21,8 @@ export interface WPProject {
    * Only live_url and featured_image_url remain here.
    */
   acf: {
-    live_url: string;
-    featured_image_url: string;
-  };
+    live_url?: string;
+  } | any[]; // WordPress can return [] if no fields are set or registered correctly
   /**
    * Populated when the request includes `_embed`.
    * Index 0 = tags, Index 1 = categories (standard WP order).
@@ -31,6 +30,12 @@ export interface WPProject {
    */
   _embedded?: {
     'wp:term'?: WPTerm[][];
+    'wp:featuredmedia'?: Array<{
+      source_url: string;
+      media_details?: {
+        sizes?: Record<string, { source_url: string }>;
+      };
+    }>;
   };
 }
 
@@ -74,9 +79,21 @@ export async function getProjectBySlug(slug: string): Promise<WPProject | null> 
  * Tags are always the first group (index 0) in `_embedded['wp:term']`.
  */
 export function getProjectTechTags(project: WPProject): WPTerm[] {
-  return project._embedded?.['wp:term']?.[0] ?? [];
+  // Tags are at index 1 in the user's current WP setup
+  return project._embedded?.['wp:term']?.[1] ?? [];
 }
 
+/**
+ * Safely extracts the featured image URL from a WPProject.
+ * It looks for the embedded featured media first, then falls back to ACF.
+ */
+export function getProjectThumbnail(project: WPProject): string | null {
+  // 1. Try standard WP Featured Image from embedding
+  const embeddedImage = project._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+  if (embeddedImage) return embeddedImage;
+
+  return null;
+}
 /**
  * Fetches every tag attached to the 'project' post type.
  * Use this to build a dynamic tech-stack filter menu.
