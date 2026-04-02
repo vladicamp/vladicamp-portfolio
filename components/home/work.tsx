@@ -1,9 +1,10 @@
-import { getProjects, getProjectTechTags, getProjectThumbnail } from '@/lib/wordpress';
+import { getWorks, getWorkTechTags, getWorkThumbnail } from '@/lib/wordpress';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default async function Work() {
-    let projects = await getProjects().catch(() => []);
-    console.log("Projects found:", projects);
+    const works = await getWorks().catch(() => []);
+    console.log(works);
     return (
         <section id="work">
             <div className="section-header">
@@ -11,25 +12,24 @@ export default async function Work() {
                     <div className="section-label">Portfolio</div>
                     <h2 className="section-title"><em>Selected</em> work</h2>
                 </div>
-                <a href="https://vladicamp.com/portfolio/" target="_blank" className="link-arrow">
+                <Link href="https://vladicamp.com/portfolio/" target="_blank" className="link-arrow">
                     See all projects →
-                </a>
+                </Link>
             </div>
 
             <div className="work-grid">
-                {projects.length === 0 ? (
+                {works.length === 0 ? (
                     <p className="work-empty">No projects found.</p>
                 ) : (
-                    projects.map((project) => {
-                        const tags = getProjectTechTags(project);
+                    works.map((work) => {
+                        const tags = getWorkTechTags(work);
                         const tagLabel = tags.map((t) => t.name).join(' · ');
-                        const acf = !Array.isArray(project.acf) ? project.acf : {};
-                        const liveUrl = acf?.live_url || 'https://vladicamp.com/portfolio/';
-                        const thumbUrl = getProjectThumbnail(project);
+                        const liveUrl = work.liveWorks?.liveUrl || 'https://vladicamp.com/portfolio/';
+                        const thumbUrl = getWorkThumbnail(work);
 
                         return (
-                            <a
-                                key={project.id}
+                            <Link
+                                key={work.id}
                                 href={liveUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -40,7 +40,7 @@ export default async function Work() {
                                         {thumbUrl ? (
                                             <Image
                                                 src={thumbUrl}
-                                                alt={project.title.rendered}
+                                                alt={work.title}
                                                 className="work-thumb-img"
                                                 width={500}
                                                 height={500}
@@ -48,7 +48,7 @@ export default async function Work() {
                                             />
                                         ) : (
                                             <div className="work-thumb-placeholder">
-                                                {project.title.rendered}
+                                                {work.title}
                                             </div>
                                         )}
                                     </div>
@@ -57,16 +57,14 @@ export default async function Work() {
                                     {tagLabel && (
                                         <div className="work-cat">{tagLabel}</div>
                                     )}
+                                    {/* title & excerpt are plain strings from GraphQL — dangerouslySetInnerHTML */}
+                                    {/* is still fine here if WP content contains HTML entities                  */}
                                     <div
                                         className="work-title"
-                                        dangerouslySetInnerHTML={{ __html: project.title.rendered }}
-                                    />
-                                    <div
-                                        className="work-desc"
-                                        dangerouslySetInnerHTML={{ __html: project.excerpt.rendered }}
+                                        dangerouslySetInnerHTML={{ __html: work.title }}
                                     />
                                 </div>
-                            </a>
+                            </Link>
                         );
                     })
                 )}

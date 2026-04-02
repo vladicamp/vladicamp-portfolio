@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Services() {
     return (
         <section id="services">
@@ -6,7 +8,7 @@ export default function Services() {
                     <div className="section-label">What I Do</div>
                     <h2 className="section-title">Services <em>tailored</em>to your needs</h2>
                 </div>
-                <a href="mailto:vladimircampos81@gmail.com" className="link-arrow">Discuss a project →</a>
+                <Link href="mailto:vladimircampos81@gmail.com" className="link-arrow">Discuss a project →</Link>
             </div>
             <div className="services-grid">
                 <div className="service-card">
