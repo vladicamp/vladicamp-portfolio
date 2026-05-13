@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 
 export default function Hero() {
     return (
@@ -8,7 +10,7 @@ export default function Hero() {
                     WordPress<br /><em>&amp; Frontend</em><br />Developer
                 </h1>
                 <p className="hero-subtitle fade-in delay-2">
-                    Building fast, beautiful, and conversion-focused websites that help businesses stand out — with 7+ years of
+                    Building fast, beautiful, and conversion-focused websites that help businesses stand out — with 10+ years of
                     hands-on experience.
                 </p>
                 <div className="hero-actions fade-in delay-3">
@@ -17,7 +19,7 @@ export default function Hero() {
                 </div>
                 <div className="hero-stats fade-in delay-4">
                     <div>
-                        <div className="stat-num">7<span>+</span></div>
+                        <div className="stat-num">10<span>+</span></div>
                         <div className="stat-label">Years Experience</div>
                     </div>
                     <div>
@@ -36,7 +38,9 @@ export default function Hero() {
                     <div className="hero-geo"></div>
                     <div className="hero-geo"></div>
                     <div className="hero-geo"></div>
-                    <div className="hero-initials">VC</div>
+                    <div className="hero-profile-image">
+                        <Image src="/vladicamp-light-logo-512.avif" alt="vladicamp logo" width={1000} height={1000} />
+                    </div>
                 </div>
                 <div className="hero-tag">
                     <div className="hero-tag-icon">📍</div>

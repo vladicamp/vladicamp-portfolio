@@ -1,12 +1,14 @@
+import Image from 'next/image';
+
 export default function About() {
     return (
         <section id="about">
             <div className="about-img-wrap">
-                <div className="about-graphic">
-                    <div className="about-graphic-letter">V</div>
+                <div className="about-img">
+                    <Image src="/vladicamp-profile.avif" alt="vladicamp profile" width={1000} height={1000} />
                 </div>
                 <div className="about-accent-box">
-                    <div className="about-accent-num">7+</div>
+                    <div className="about-accent-num">10+</div>
                     <div className="about-accent-label">Yrs. Exp.</div>
                 </div>
             </div>
@@ -22,6 +24,8 @@ export default function About() {
                     <div className="skills-label">Tech I work with</div>
                     <div className="skills-list">
                         <span className="skill-pill">WordPress</span>
+                        <span className="skill-pill">Shopify</span>
+                        <span className="skill-pill">Next.js</span>
                         <span className="skill-pill">PHP</span>
                         <span className="skill-pill">HTML5</span>
                         <span className="skill-pill">CSS3</span>

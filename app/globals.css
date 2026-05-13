@@ -112,11 +112,11 @@
   }
 
   .nav-logo {
-    @apply font-display text-xl font-bold tracking-tight text-white no-underline;
+    @apply no-underline w-30;
   }
 
-  .nav-logo span {
-    @apply text-[var(--accent)];
+  .nav-logo img {
+    @apply size-full;
   }
 
   .nav-links {
@@ -247,6 +247,14 @@
 
   .hero-initials {
     @apply pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none font-display text-[clamp(8rem,18vw,18rem)] font-black italic leading-none text-transparent [-webkit-text-stroke:1px_rgba(200,240,74,0.15)];
+  }
+
+  .hero-profile-image {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .hero-profile-image img {
+    @apply size-full;
   }
 
   .hero-geo {
@@ -471,12 +479,8 @@
     @apply relative;
   }
 
-  .about-graphic {
-    @apply relative flex aspect-[3/4] w-full items-center justify-center overflow-hidden rounded-[20px] border border-[var(--border)] bg-[var(--bg3)];
-  }
-
-  .about-graphic-letter {
-    @apply font-display text-[14rem] font-black italic text-transparent [-webkit-text-stroke:1px_rgba(200,240,74,0.1)];
+  .about-img {
+    @apply overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg3)];
   }
 
   .about-accent-box {
@@ -579,18 +583,6 @@
     @apply -translate-y-0.5 border-[var(--accent)] text-[var(--accent)];
   }
 
-  footer {
-    @apply flex items-center justify-between border-t border-[var(--border)] px-[60px] py-9 text-[0.8rem] text-[var(--muted)];
-  }
-
-  footer a {
-    @apply text-[var(--muted)] no-underline;
-  }
-
-  footer a:hover {
-    @apply text-[var(--accent)];
-  }
-
   .fade-in {
     @apply translate-y-6 opacity-0;
     animation: fadeUp 0.7s ease forwards;
@@ -654,10 +646,6 @@
 
   .section-header {
     @apply flex-col items-start gap-5;
-  }
-
-  footer {
-    @apply flex-col gap-3 text-center;
   }
 
   .about-accent-box {
