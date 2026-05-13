@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 export default function About() {
     return (
-        <section id="about" className="flex flex-col md:flex-row items-center gap-12 lg:gap-20 bg-[var(--bg)]">
+        <section id="about" className="flex flex-col md:flex-row items-start lg:items-center gap-12 lg:gap-20 bg-[var(--bg)]">
             <div className="relative w-full md:w-1/2">
                 <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg3)]">
-                    <Image src="/vladicamp-profile.avif" alt="vladicamp profile" width={1000} height={1000} />
+                    <Image className="w-full" src="/vladicamp-profile.avif" alt="vladicamp profile" width={1000} height={1000} />
                 </div>
-                <div className="absolute -bottom-5 -right-5 flex size-[140px] flex-col items-center justify-center gap-1 rounded-2xl bg-[var(--accent)]">
+                <div className="absolute -bottom-3 md:-bottom-5 -right-3 md:-right-5 flex size-30 md:size-35 flex-col items-center justify-center gap-1 rounded-2xl bg-[var(--accent)]">
                     <div className="font-display text-[2.8rem] font-black leading-none text-black">10+</div>
                     <div className="text-[0.7rem] font-semibold uppercase tracking-wide text-black/65">Yrs. Exp.</div>
                 </div>
