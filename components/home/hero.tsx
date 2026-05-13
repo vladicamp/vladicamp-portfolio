@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 export default function Hero() {
     return (
-        <section id="hero">
-            <div className="hero-left">
+        <section id="hero" className="relative grid min-h-svh grid-cols-1 lg:grid-cols-2 overflow-hidden pt-[88px]">
+            <div className="relative z-[2] flex flex-col justify-center py-20 px-8 pb-12 md:px-16 md:pb-16;">
                 <div className="hero-badge fade-in">Available for projects</div>
                 <h1 className="hero-title fade-in delay-1">
                     WordPress<br /><em>&amp; Frontend</em><br />Developer
@@ -33,7 +33,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="hero-right">
+            <div className="relative block h-[100vw] lg:h-auto">
                 <div className="hero-placeholder">
                     <div className="hero-geo"></div>
                     <div className="hero-geo"></div>
