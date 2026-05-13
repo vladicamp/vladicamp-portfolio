@@ -6,7 +6,7 @@ export default function Services() {
             <div className="section-header">
                 <div>
                     <div className="section-label">What I Do</div>
-                    <h2 className="section-title">Services <em>tailored</em>to your needs</h2>
+                    <h2 className="section-title">Services <em>tailored</em> to your needs</h2>
                 </div>
                 <Link href="mailto:vladimircampos81@gmail.com" className="link-arrow">Discuss a project →</Link>
             </div>

@@ -17,7 +17,6 @@ export default function Home() {
         <Marquee />
         <Services />
         <Work />
-        <Testimonial />
         <About />
         <Contact />
       </main>

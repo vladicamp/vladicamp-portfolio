@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default async function Work() {
     const works = await getWorks().catch(() => []);
-    console.log(works);
+    // console.log(works); 
     return (
         <section id="work">
             <div className="section-header">
@@ -12,12 +12,9 @@ export default async function Work() {
                     <div className="section-label">Portfolio</div>
                     <h2 className="section-title"><em>Selected</em> work</h2>
                 </div>
-                <Link href="https://vladicamp.com/portfolio/" target="_blank" className="link-arrow">
-                    See all projects →
-                </Link>
             </div>
 
-            <div className="work-grid">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {works.length === 0 ? (
                     <p className="work-empty">No projects found.</p>
                 ) : (
