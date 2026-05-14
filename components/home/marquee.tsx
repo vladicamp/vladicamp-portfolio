@@ -1,7 +1,7 @@
 export default function Marquee() {
     return (
-        <div className="marquee-wrap">
-            <div className="marquee-track" id="marqueeTrack">
+        <div className="overflow-hidden border-y border-[var(--border)] bg-[var(--bg2)] py-[18px]">
+            <div className="marquee-track flex w-max gap-0 [animation:marquee_22s_linear_infinite]" id="marqueeTrack">
                 <span className="marquee-item">WordPress <span className="marquee-dot">✦</span></span>
                 <span className="marquee-item">Frontend Development <span className="marquee-dot">✦</span></span>
                 <span className="marquee-item">WooCommerce <span className="marquee-dot">✦</span></span>
