@@ -152,14 +152,6 @@
     animation-play-state: paused;
   }
 
-  .marquee-item {
-    @apply flex items-center gap-[18px] whitespace-nowrap px-9 text-xs font-medium uppercase tracking-[0.12em] text-[var(--muted)];
-  }
-
-  .marquee-dot {
-    @apply text-[1.2rem] text-[var(--accent)];
-  }
-
   section {
     @apply px-[60px] py-[120px];
   }
@@ -197,14 +189,6 @@
     @apply border-[var(--muted)] text-[var(--text)];
   }
 
-  #services {
-    @apply bg-[var(--bg)];
-  }
-
-  .services-grid {
-    @apply grid grid-cols-3 gap-0.5;
-  }
-
   .service-card {
     @apply relative overflow-hidden border border-[var(--border)] bg-[var(--bg2)] px-10 py-12 transition-colors duration-300;
   }
@@ -220,30 +204,6 @@
 
   .service-card:hover::before {
     @apply scale-x-100;
-  }
-
-  .service-num {
-    @apply pointer-events-none absolute right-[30px] top-5 font-display text-[4rem] font-black leading-none text-white/[0.04];
-  }
-
-  .service-icon {
-    @apply mb-7 flex size-12 items-center justify-center rounded-xl border border-[rgba(200,240,74,0.2)] bg-[rgba(200,240,74,0.1)] text-[1.3rem];
-  }
-
-  .service-name {
-    @apply mb-3.5 font-display text-2xl font-bold;
-  }
-
-  .service-desc {
-    @apply text-[0.9rem] font-light leading-[1.7] text-[var(--muted)];
-  }
-
-  .service-tags {
-    @apply mt-7 flex flex-wrap gap-2;
-  }
-
-  .tag {
-    @apply rounded-[50px] border border-[var(--border)] bg-white/[0.05] px-3 py-1 text-[0.72rem] tracking-[0.04em] text-[var(--muted)];
   }
 
   #work {
@@ -390,11 +350,6 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-
-  .services-grid {
-    @apply grid-cols-1;
-  }
-
   .work-grid {
     @apply grid-cols-1;
   }

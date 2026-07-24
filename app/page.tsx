@@ -6,11 +6,15 @@ import Services from "@/components/home/services";
 import Work from "@/components/home/work";
 import About from "@/components/home/about";
 import Contact from "@/components/home/contact";
+import { getGeneralSettings, getSiteLogoSrc } from "@/lib/wordpress/settings";
 
-export default function Home() {
+export default async function Home() {
+  const settings = await getGeneralSettings();
+  const logoSrc = getSiteLogoSrc(settings);
+
   return (
     <>
-      <Header />
+      <Header logoSrc={logoSrc} siteTitle={settings.title} />
       <main>
         <Hero />
         <Marquee />
@@ -19,7 +23,7 @@ export default function Home() {
         <About />
         <Contact />
       </main>
-      <Footer />
+      <Footer logoSrc={logoSrc} siteTitle={settings.title} />
     </>
   );
 }
