@@ -17,7 +17,7 @@ export default function Hero() {
                     <a href="#work" className="btn-primary">View My Work ↓</a>
                     <a href="mailto:vladimircampos81@gmail.com" className="btn-outline">Get in touch</a>
                 </div>
-                <div className="flex gap-6 border-t border-[var(--border)] mt-16 pt-10 fade-in delay-4">
+                <div className="flex gap-6 lg:gap-10 border-t border-[var(--border)] mt-16 pt-10 fade-in delay-4">
                     <div>
                         <div className="font-display text-4xl lg:text-5xl font-black leading-none text-[var(--text)]">10<span className="text-[var(--accent)]">+</span></div>
                         <div className="mt-1 text-[0.78rem] uppercase tracking-wide text-[var(--muted)]">Years Experience</div>
