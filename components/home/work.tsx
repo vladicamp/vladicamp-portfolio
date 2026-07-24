@@ -6,7 +6,7 @@ export default async function Work() {
     const works = await getWorks().catch(() => []);
     // console.log(works); 
     return (
-        <section id="work">
+        <section id="work" className="bg-[var(--bg2)]">
             <div className="section-header">
                 <div>
                     <div className="section-label">Portfolio</div>
@@ -30,34 +30,34 @@ export default async function Work() {
                                 href={liveUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="work-card"
+                                className="block overflow-hidden rounded-2xl border border-[var(--border)] hover:border-[var(--accent)] bg-[var(--surface)] no-underline transition-[transform,border-color] hover:-translate-y-1.5 duration-300"
                             >
-                                <div className="work-thumb">
-                                    <div className="work-thumb-inner">
+                                <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-[var(--bg3)]">
+                                    <div className="size-full transition-transform duration-500 ease-out">
                                         {thumbUrl ? (
                                             <Image
                                                 src={thumbUrl}
                                                 alt={work.title}
-                                                className="work-thumb-img"
+                                                className="size-full object-cover"
                                                 width={500}
                                                 height={500}
                                                 loading="eager"
                                             />
                                         ) : (
-                                            <div className="work-thumb-placeholder">
+                                            <div className="flex size-full items-center justify-center font-display text-[4rem] font-black italic text-white/[0.04]">
                                                 {work.title}
                                             </div>
                                         )}
                                     </div>
                                 </div>
-                                <div className="work-info">
+                                <div className="px-7 pb-6 pt-7">
                                     {tagLabel && (
-                                        <div className="work-cat">{tagLabel}</div>
+                                        <div className="mb-2 text-[0.72rem] font-medium uppercase tracking-[0.1em] text-[var(--accent)]">{tagLabel}</div>
                                     )}
                                     {/* title & excerpt are plain strings from GraphQL — dangerouslySetInnerHTML */}
                                     {/* is still fine here if WP content contains HTML entities                  */}
                                     <div
-                                        className="work-title"
+                                        className="mb-2.5 font-display text-[1.4rem] font-bold text-[var(--text)]"
                                         dangerouslySetInnerHTML={{ __html: work.title }}
                                     />
                                 </div>

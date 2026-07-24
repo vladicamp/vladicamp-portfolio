@@ -19,25 +19,25 @@ export default function Hero() {
                 </div>
                 <div className="flex gap-6 lg:gap-10 border-t border-[var(--border)] mt-16 pt-10 fade-in delay-4">
                     <div>
-                        <div className="stat-num">10<span>+</span></div>
-                        <div className="stat-label">Years Experience</div>
+                        <div className="font-display text-4xl md:text-5xl font-black leading-none text-[var(--text)]">10<span className="text-[var(--accent)]">+</span></div>
+                        <div className="mt-1 text-[0.78rem] uppercase tracking-wide text-[var(--muted)]">Years Experience</div>
                     </div>
                     <div>
-                        <div className="stat-num">50<span>+</span></div>
-                        <div className="stat-label">Projects Delivered</div>
+                        <div className="font-display text-4xl md:text-5xl font-black leading-none text-[var(--text)]">50<span className="text-[var(--accent)]">+</span></div>
+                        <div className="mt-1 text-[0.78rem] uppercase tracking-wide text-[var(--muted)]">Projects Delivered</div>
                     </div>
                     <div>
-                        <div className="stat-num">100<span>%</span></div>
-                        <div className="stat-label">Client Satisfaction</div>
+                        <div className="font-display text-4xl md:text-5xl font-black leading-none text-[var(--text)]">100<span className="text-[var(--accent)]">%</span></div>
+                        <div className="mt-1 text-[0.78rem] uppercase tracking-wide text-[var(--muted)]">Client Satisfaction</div>
                     </div>
                 </div>
             </div>
 
             <div className="relative block h-[100vw] lg:h-auto overflow-hidden">
                 <div className="relative flex size-full items-center justify-center bg-[linear-gradient(135deg,#1a1a1a_0%,#0d0d0d_100%)]">
-                    <div className="hero-geo"></div>
-                    <div className="hero-geo size-[500px]"></div>
-                    <div className="hero-geo size-[680px]"></div>
+                    <div className="absolute left-1/2 top-1/2 size-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[rgba(200,240,74,0.08)]"></div>
+                    <div className="absolute left-1/2 top-1/2 size-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[rgba(200,240,74,0.08)] size-[500px]"></div>
+                    <div className="absolute left-1/2 top-1/2 size-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[rgba(200,240,74,0.08)] size-[680px]"></div>
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <Image className="w-full" src="/vladicamp-light-logo-512.avif" alt="vladicamp logo" width={1000} height={1000} />
                     </div>

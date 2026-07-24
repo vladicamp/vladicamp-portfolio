@@ -15,10 +15,10 @@ export default function About() {
             <div className="about-content w-full md:w-1/2 ">
                 <div className="section-label">About Me</div>
                 <h2 className="section-title">A website that leaves<br /><em>a lasting impression</em></h2>
-                <p className="about-text">Hi, I'm <strong>Vlad</strong> — a freelance WordPress and frontend developer based in
+                <p className="mb-5 text-[1.05rem] font-light leading-[1.8] text-[var(--muted)]">Hi, I'm <strong>Vlad</strong> — a freelance WordPress and frontend developer based in
                     Manila, Philippines. I craft fast, pixel-perfect websites that help businesses grow
                     online.</p>
-                <p className="about-text">I'm passionate about clean code, great design, and making the web a better-looking place —
+                <p className="mb-5 text-[1.05rem] font-light leading-[1.8] text-[var(--muted)]">I'm passionate about clean code, great design, and making the web a better-looking place —
                     one project at a time.</p>
                 <div className="mt-10">
                     <div className="mb-4 text-xs uppercase tracking-[0.1em] text-[var(--muted)]">Tech I work with</div>
@@ -38,10 +38,10 @@ export default function About() {
                     </div>
                 </div>
                 <div className="mt-9 flex flex-col gap-2.5">
-                    <div className="about-contact-row"><strong>Email</strong> <a
+                    <div className="text-[var(--muted)] no-underline transition-colors duration-200 hover:text-[var(--accent)]"><strong className="min-w-[70px] text-[var(--text)]">Email</strong> <a
                         href="mailto:vladimircampos81@gmail.com">vladimircampos81@gmail.com</a></div>
-                    <div className="about-contact-row"><strong>Mobile</strong> <a href="tel:+639219055107">(+63) 921 905 5107</a></div>
-                    <div className="about-contact-row"><strong>WhatsApp</strong> <a href="https://wa.me/639068053669"
+                    <div className="text-[var(--muted)] no-underline transition-colors duration-200 hover:text-[var(--accent)]"><strong className="text-[var(--text)]">Mobile</strong> <a href="tel:+639219055107">(+63) 921 905 5107</a></div>
+                    <div className="text-[var(--muted)] no-underline transition-colors duration-200 hover:text-[var(--accent)]"><strong className="text-[var(--text)]">WhatsApp</strong> <a href="https://wa.me/639068053669"
                         target="_blank">+63 906 805 3669</a></div>
                 </div>
             </div>

@@ -132,22 +132,6 @@
     border-color: var(--muted);
   }
 
-  .stat-num {
-    @apply font-display text-[2.6rem] font-black leading-none text-[var(--text)];
-  }
-
-  .stat-num span {
-    @apply text-[var(--accent)];
-  }
-
-  .stat-label {
-    @apply mt-1 text-[0.78rem] uppercase tracking-wide text-[var(--muted)];
-  }
-
-  .hero-geo {
-    @apply absolute left-1/2 top-1/2 size-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[rgba(200,240,74,0.08)];
-  }
-
   .marquee-track:hover {
     animation-play-state: paused;
   }
@@ -206,116 +190,12 @@
     @apply scale-x-100;
   }
 
-  #work {
-    @apply bg-[var(--bg2)];
-  }
-
-  .work-card {
-    @apply block overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] no-underline transition-[transform,border-color] duration-300;
-  }
-
-  .work-card:hover {
-    @apply -translate-y-1.5 border-[rgba(200,240,74,0.3)];
-  }
-
-  .work-thumb {
-    @apply relative flex aspect-video w-full items-center justify-center overflow-hidden bg-[var(--bg3)];
-  }
-
-  .work-thumb-inner {
-    @apply size-full transition-transform duration-500 ease-out;
-  }
-
-  .work-card:hover .work-thumb-inner {
-    @apply scale-[1.04];
-  }
-
-  .work-thumb-img {
-    @apply size-full object-cover;
-  }
-
-  .work-thumb-placeholder {
-    @apply flex size-full items-center justify-center font-display text-[4rem] font-black italic text-white/[0.04];
-  }
-
-  .work-info {
-    @apply px-7 pb-6 pt-7;
-  }
-
-  .work-cat {
-    @apply mb-2 text-[0.72rem] font-medium uppercase tracking-[0.1em] text-[var(--accent)];
-  }
-
-  .work-title {
-    @apply mb-2.5 font-display text-[1.4rem] font-bold text-[var(--text)];
-  }
-
-  .work-desc {
-    @apply text-[0.85rem] leading-[1.6] text-[var(--muted)];
-  }
-
-  .about-text {
-    @apply mb-5 text-[1.05rem] font-light leading-[1.8] text-[var(--muted)];
-  }
-
   .skill-pill {
     @apply rounded-[50px] border border-[var(--border)] bg-[var(--surface)] px-[18px] py-[7px] text-[0.82rem] font-normal text-[var(--text)] transition-[border-color,color] duration-200;
   }
 
   .skill-pill:hover {
     @apply border-[var(--accent)] text-[var(--accent)];
-  }
-
-  .about-contact-row {
-    @apply flex items-center gap-2.5 text-[0.88rem] text-[var(--muted)];
-  }
-
-  .about-contact-row strong {
-    @apply min-w-[70px] text-[var(--text)];
-  }
-
-  .about-contact-row a {
-    @apply text-[var(--muted)] no-underline transition-colors duration-200;
-  }
-
-  .about-contact-row a:hover {
-    @apply text-[var(--accent)];
-  }
-
-  #contact {
-    @apply relative overflow-hidden bg-[var(--bg)] px-[60px] py-[140px] text-center;
-  }
-
-  .cta-bg {
-    @apply pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,rgba(200,240,74,0.06)_0%,transparent_70%)];
-  }
-
-  #contact .section-label {
-    @apply justify-center;
-  }
-
-  #contact .section-label::before {
-    @apply hidden;
-  }
-
-  .cta-title {
-    @apply mb-7 font-display text-[clamp(3rem,6vw,6.5rem)] font-black leading-none tracking-[-0.03em];
-  }
-
-  .cta-title em {
-    @apply italic text-[var(--accent2)];
-  }
-
-  .cta-sub {
-    @apply mx-auto mb-12 max-w-[480px] text-[1.05rem] font-light leading-[1.7] text-[var(--muted)];
-  }
-
-  .cta-actions {
-    @apply flex flex-wrap items-center justify-center gap-4;
-  }
-
-  .socials {
-    @apply mt-14 flex justify-center gap-3.5;
   }
 
   .social-link {
@@ -350,10 +230,6 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .work-grid {
-    @apply grid-cols-1;
-  }
-
   section {
     @apply px-8 py-20;
   }
@@ -361,19 +237,10 @@
   .section-header {
     @apply flex-col items-start gap-5;
   }
-
-  .about-accent-box {
-    @apply size-[110px];
-  }
 }
 
 @media (max-width: 640px) {
-
   section {
     @apply px-5 py-16;
-  }
-
-  .cta-title {
-    @apply text-[clamp(2.2rem,10vw,4rem)];
   }
 }
