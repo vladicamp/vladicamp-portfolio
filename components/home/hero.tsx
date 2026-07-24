@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Hero() {
     return (
         <section id="hero" className="relative grid min-h-svh grid-cols-1 lg:grid-cols-2 overflow-hidden pt-[88px]">
-            <div className="relative z-[2] flex flex-col justify-center py-20 px-8 pb-12 md:px-16 md:pb-16;">
+            <div className="relative z-[2] flex flex-col justify-center py-20 px-0 lg:px-16 pb-12 md:pb-16;">
                 <div className="fade-in">Available for projects</div>
                 <h1 className="mb-7 font-display text-[clamp(2.8rem,5vw,4.5rem)] font-black leading-[1.05] tracking-tight text-white fade-in delay-1">
                     WordPress<br /><em className="italic text-[var(--accent2)]">&amp; Frontend</em><br />Developer
@@ -17,17 +17,17 @@ export default function Hero() {
                     <a href="#work" className="btn-primary">View My Work ↓</a>
                     <a href="mailto:vladimircampos81@gmail.com" className="btn-outline">Get in touch</a>
                 </div>
-                <div className="flex gap-6 lg:gap-10 border-t border-[var(--border)] mt-16 pt-10 fade-in delay-4">
+                <div className="flex gap-6 border-t border-[var(--border)] mt-16 pt-10 fade-in delay-4">
                     <div>
-                        <div className="font-display text-4xl md:text-5xl font-black leading-none text-[var(--text)]">10<span className="text-[var(--accent)]">+</span></div>
+                        <div className="font-display text-4xl lg:text-5xl font-black leading-none text-[var(--text)]">10<span className="text-[var(--accent)]">+</span></div>
                         <div className="mt-1 text-[0.78rem] uppercase tracking-wide text-[var(--muted)]">Years Experience</div>
                     </div>
                     <div>
-                        <div className="font-display text-4xl md:text-5xl font-black leading-none text-[var(--text)]">50<span className="text-[var(--accent)]">+</span></div>
+                        <div className="font-display text-4xl lg:text-5xl font-black leading-none text-[var(--text)]">50<span className="text-[var(--accent)]">+</span></div>
                         <div className="mt-1 text-[0.78rem] uppercase tracking-wide text-[var(--muted)]">Projects Delivered</div>
                     </div>
                     <div>
-                        <div className="font-display text-4xl md:text-5xl font-black leading-none text-[var(--text)]">100<span className="text-[var(--accent)]">%</span></div>
+                        <div className="font-display text-4xl lg:text-5xl font-black leading-none text-[var(--text)]">100<span className="text-[var(--accent)]">%</span></div>
                         <div className="mt-1 text-[0.78rem] uppercase tracking-wide text-[var(--muted)]">Client Satisfaction</div>
                     </div>
                 </div>
