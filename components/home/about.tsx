@@ -42,7 +42,7 @@ export default function About() {
                         href="mailto:vladimircampos81@gmail.com">vladimircampos81@gmail.com</a></div>
                     <div className="text-[var(--muted)] no-underline transition-colors duration-200 hover:text-[var(--accent)]"><strong className="text-[var(--text)]">Mobile</strong> <a href="tel:+639219055107">(+63) 921 905 5107</a></div>
                     <div className="text-[var(--muted)] no-underline transition-colors duration-200 hover:text-[var(--accent)]"><strong className="text-[var(--text)]">WhatsApp</strong> <a href="https://wa.me/639068053669"
-                        target="_blank">+63 906 805 3669</a></div>
+                        target="_blank">+63 921 905 5107</a></div>
                 </div>
             </div>
         </section>
