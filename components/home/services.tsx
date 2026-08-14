@@ -44,7 +44,7 @@ const serviceItems = [
 
 export default function Services() {
     return (
-        <section id="services" className="bg-[var(--bg)">
+        <section id="services" className="bg-[var(--bg)]">
             <div className="section-header">
                 <div>
                     <div className="section-label">What I Do</div>
@@ -63,7 +63,7 @@ export default function Services() {
                             <div className="mt-7 flex flex-wrap gap-2">
                                 {serviceItem.tags.map((tag) => {
                                     return(
-                                        <span className="rounded-[50px] border border-[var(--border)] bg-white/[0.05] px-3 py-1 text-[0.72rem] tracking-[0.04em] text-[var(--muted)]">{tag}</span>
+                                        <span key={tag} className="rounded-[50px] border border-[var(--border)] bg-white/[0.05] px-3 py-1 text-[0.72rem] tracking-[0.04em] text-[var(--muted)]">{tag}</span>
                                     )
                                 })}
                             </div>
