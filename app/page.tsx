@@ -7,9 +7,11 @@ import Work from "@/components/home/work";
 import About from "@/components/home/about";
 import Contact from "@/components/home/contact";
 import { getGeneralSettings, getSiteLogoSrc } from "@/lib/wordpress/settings";
+import { getProfileSettings } from "@/lib/wordpress/profile";
 
 export default async function Home() {
   const settings = await getGeneralSettings();
+  const profile = await getProfileSettings();
   const logoSrc = getSiteLogoSrc(settings);
 
   return (
@@ -21,7 +23,7 @@ export default async function Home() {
         <Services />
         <Work />
         <About />
-        <Contact />
+        <Contact resumeUrl={profile.resumeUrl} />
       </main>
       <Footer logoSrc={logoSrc} siteTitle={settings.title} />
     </>

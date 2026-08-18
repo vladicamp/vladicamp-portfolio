@@ -1,6 +1,10 @@
 import Link from 'next/link';
 
-export default function Contact() {
+type ContactProps = {
+    resumeUrl?: string | null;
+};
+
+export default function Contact({ resumeUrl = 'https://vladicamp.com/wp-content/uploads/2023/05/vladimir-campos-cv-1.pdf' }: ContactProps) {
     return (
         <section id="contact" className="relative overflow-hidden bg-[var(--bg)] px-[60px] py-[140px] text-center">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,rgba(200,240,74,0.06)_0%,transparent_70%)]"></div>
@@ -10,7 +14,7 @@ export default function Contact() {
                 business stand out.</p>
             <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link href="mailto:vladimircampos81@gmail.com" className="btn-primary">Get in touch →</Link>
-                <Link href="https://vladicamp.com/wp-content/uploads/2023/05/vladimir-campos-cv-1.pdf" target="_blank"
+                <Link href={resumeUrl || 'https://vladicamp.com/wp-content/uploads/2023/05/vladimir-campos-cv-1.pdf'} target="_blank"
                     className="btn-outline">Download CV</Link>
             </div>
             <div className="mt-14 flex justify-center gap-3.5">
