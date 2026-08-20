@@ -1,5 +1,8 @@
 import { fetchGraphQL } from './client';
 
+/** Work Category term slug in WordPress (taxonomy: work-category). */
+export const FEATURED_WORK_CATEGORY_SLUG = 'featured';
+
 export interface WPTerm {
   id: string;
   name: string;
@@ -21,36 +24,65 @@ export interface WPWork {
   } | null;
 }
 
-const GET_WORKS = /* GraphQL */ `
-  query GetWorks {
-    works {
-      nodes {
-        id
-        slug
-        title
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
-        workTags {
-          nodes {
-            id
-            name
-            slug
-          }
-        }
-        liveWorks {
-          liveUrl
+const WORK_FIELDS = /* GraphQL */ `
+  id
+  slug
+  title
+  featuredImage {
+    node {
+      sourceUrl
+    }
+  }
+  workTags {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+  liveWorks {
+    liveUrl
+  }
+`;
+
+const GET_FEATURED_WORKS = /* GraphQL */ `
+  query GetFeaturedWorks($slug: ID!) {
+    workCategory(id: $slug, idType: SLUG) {
+      works(first: 100, where: { orderby: { field: MENU_ORDER, order: ASC } }) {
+        nodes {
+          ${WORK_FIELDS}
         }
       }
     }
   }
 `;
 
-/** Home page portfolio grid data. */
+const GET_WORKS_FALLBACK = /* GraphQL */ `
+  query GetWorksFallback {
+    works(first: 100, where: { orderby: { field: DATE, order: DESC } }) {
+      nodes {
+        ${WORK_FIELDS}
+      }
+    }
+  }
+`;
+
+/** Home page portfolio grid — works in the "featured" Work Category taxonomy. */
 export async function getWorks(): Promise<WPWork[]> {
-  const data = await fetchGraphQL<{ works: { nodes: WPWork[] } }>(GET_WORKS);
+  try {
+    const data = await fetchGraphQL<{
+      workCategory: { works: { nodes: WPWork[] } } | null;
+    }>(GET_FEATURED_WORKS, { slug: FEATURED_WORK_CATEGORY_SLUG });
+
+    const featured = data.workCategory?.works?.nodes ?? [];
+    if (featured.length > 0) return featured;
+  } catch {
+    // workCategory taxonomy not registered yet, or no featured works assigned.
+  }
+
+  const data = await fetchGraphQL<{ works: { nodes: WPWork[] } }>(
+    GET_WORKS_FALLBACK
+  );
   return data.works.nodes;
 }
 
