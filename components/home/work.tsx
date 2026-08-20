@@ -14,7 +14,7 @@ export default async function Work() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {works.length === 0 ? (
                     <p className="work-empty">No projects found.</p>
                 ) : (
@@ -32,15 +32,15 @@ export default async function Work() {
                                 rel="noopener noreferrer"
                                 className="block overflow-hidden rounded-2xl border border-[var(--border)] hover:border-[var(--accent)] bg-[var(--surface)] no-underline transition-[transform,border-color] hover:-translate-y-1.5 duration-300"
                             >
-                                <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-[var(--bg3)]">
+                                <div className="relative flex aspect-2/3 w-full items-center justify-center overflow-hidden bg-[var(--bg3)]">
                                     <div className="size-full transition-transform duration-500 ease-out">
                                         {thumbUrl ? (
                                             <Image
                                                 src={thumbUrl}
                                                 alt={work.title}
-                                                className="size-full object-cover"
-                                                width={500}
-                                                height={500}
+                                                className="size-full object-cover object-top"
+                                                width={400}
+                                                height={533}
                                                 loading="eager"
                                             />
                                         ) : (

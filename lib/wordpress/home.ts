@@ -30,7 +30,7 @@ const GET_WORKS = /* GraphQL */ `
         title
         featuredImage {
           node {
-            sourceUrl(size: ET_PB_POST_MAIN_IMAGE_FULLWIDTH)
+            sourceUrl
           }
         }
         workTags {
