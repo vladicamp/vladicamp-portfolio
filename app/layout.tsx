@@ -12,6 +12,9 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: settings.siteIconUrl || "/favicon.ico",
     },
+    verification: {
+      google: "GcWZXfA1SYejeFGLR-w00tHLXjB2YJroBHqQX-fizAU",
+    },
   };
 }
 
