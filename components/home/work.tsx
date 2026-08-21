@@ -1,4 +1,4 @@
-import { getWorks, getWorkTechTags, getWorkThumbnail } from '@/lib/wordpress/home';
+import { getWorks, getWorkTechTags, getWorkThumbnail } from '@/lib/wordpress/work';
 import Image from 'next/image';
 import Link from 'next/link';
 

@@ -67,7 +67,7 @@ const GET_WORKS_FALLBACK = /* GraphQL */ `
   }
 `;
 
-/** Home page portfolio grid — works in the "featured" Work Category taxonomy. */
+/** Featured works for the portfolio grid (Work Category taxonomy). */
 export async function getWorks(): Promise<WPWork[]> {
   try {
     const data = await fetchGraphQL<{
